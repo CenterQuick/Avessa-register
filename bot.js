@@ -116,24 +116,28 @@ client.on('error', e => {
 
 client.login(ayarlar.token);
 
-//-----------------------HOŞ-GELDİN-MESAJI----------------------\\     STG
+//-----------------------HOŞ-GELDİN-MESAJI----------------------\\     
 
 client.on("guildMemberAdd", member => {  
-  const kanal = member.guild.channels.cache.find(r => r.id === "783947099926560779");
-    
+    const kanal = member.guild.channels.cache.find(r => r.id === "795234093025198110");
+    const register = "<@&795223926459727882>"
     let user = client.users.cache.get(member.id);
     require("moment-duration-format");
       const kurulus = new Date().getTime() - user.createdAt.getTime();  
-  const gecen = moment.duration(kurulus).format(`YY **[Yıl,]** DD **[Gün,]** HH **[Saat,]** mm **[Dakika,]** ss **[Saniye]**`) 
    
     var kontrol;
-  if (kurulus < 1296000000) kontrol = '❌'
-  if (kurulus > 1296000000) kontrol = '✅'
-  moment.locale("tr");
-  kanal.send(":tada: Sunucumuza Hoş Geldin ! <@" + member + "> \n\n Hesabın "+ gecen +" Önce Oluşturulmuş "+kontrol+" \n\n Sunucu kurallarımız <#KURALLAR KANALININ IDSI> kanalında belirtilmiştir. Unutma sunucu içerisinde ki ceza işlemlerin kuralları okuduğunu varsayarak gerçekleştirilecek. \n\n Seninle beraber " + member.guild.memberCount + " kişi olduk ! Tagımızı alarak bizlere destek olabilirsin ! Kayıt olmak için teyit odalarına girip ses teyit vermen gerekiyor <@&REGISTER ROL ID> seninle ilgilenecektir ! İyi eğlenceler.")
+  if (kurulus < 1296000000) kontrol = 'Hesap Durumu: Güvenilir Değil'
+  if (kurulus > 1296000000) kontrol = 'Hesap Durumu: Güvenilir Gözüküyor'
+    moment.locale("tr");
+      const strigalog = new Discord.MessageEmbed()
+      .setAuthor(member.guild.name)
+  .setDescription("**Hoşgeldin! <@" + member + "> Seninle \`" + member.guild.memberCount + "\` Kişiyiz.\n\nMüsait olduğunda Confirmed Odalarından Birine Geçip Kaydını Yaptırabilirsin. \n\n<@&771695296291668000> seninle ilgilenicektir. \n\nHesabın Oluşturulma Tarihi: " + moment(member.user.createdAt).format("`YYYY DD MMMM dddd`") +  "\n\n"  + kontrol + "\n\nTagımızı alarak ` STG ` bize destek olabilirsin.**\n")
+   .setImage("https://i.pinimg.com/originals/2c/43/ac/2c43acd8c41ee853cf9fbb04960e4fa6.gif")
+   kanal.send(strigalog)   
+     kanal.send(register) 
   });
   
-//-----------------------HOŞ-GELDİN-MESAJI----------------------\\     STG
+//-----------------------HOŞ-GELDİN-MESAJI----------------------\\     
 
 
 
