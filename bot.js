@@ -218,3 +218,11 @@ member.roles.add(rol)
 })
 
 //-----------------------TAG-KONTROL----------------------\\     
+
+//-----------------------İSİM-DEĞİŞTİRME----------------------\\     
+
+client.on("guildMemberAdd", member => {
+  member.setNickname(`ϟ İsim | Yaş`)
+});
+
+//-----------------------İSİM-DEĞİŞTİRME----------------------\\     
