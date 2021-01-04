@@ -226,3 +226,11 @@ client.on("guildMemberAdd", member => {
 });
 
 //-----------------------İSİM-DEĞİŞTİRME----------------------\\     
+
+//------------------BOTUN-SESTE-KALMA-KOMUTU------------------------------\\
+
+client.on("ready", () => {
+client.channels.cache.get('795238247604420618').join();
+})
+
+//------------------BOTUN-SESTE-KALMA-KOMUTU------------------------------\\
