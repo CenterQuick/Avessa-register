@@ -41,6 +41,23 @@ x.roles.add(xx)
 x.roles.add(cinsiyet)
 x.roles.remove(kayıtsız)
 
+db.add(`kayıtSayi.${message.author.id}`, 1)
+db.add(`erkekUye.${message.author.id}`, 1)
+let kayitli = db.get(`erkekUye.${message.author.id}`);
+let kayıtlar = db.fetch(`kayıtSayi.${message.author.id}`); 
+
+const embed = new Discord.MessageEmbed()
+.setTitle(`Kayıt İşlemi Tamamlandı !`)
+    .addField(`Kayıt Eden:`, `<@${message.author.id}> Tarafından Kayıt Edildi`) 
+    .addField(`Kayıt Edilen:`, `<@${member.id}> Kayıt Oldu`)
+    .addField(`Verilen Rol:`, `<@&${kadin.id}> <@&${xx.id}> <@&${cinsiyet.id}> Rolleri Verildi`) 
+    .addField(`Alınan Rol:`, `<@&${kayıtsız.id}> Rolleri Alındı`)
+    .addField(`Yeni İsmin:`, `\`${tag} ${isim} | ${yas}\` Olarak Güncellendi`) 
+    .addField(`Yetkili Toplam:`, `\`${kayıtlar}\` Kayıtlara Sahip.`)
+.setFooter(`LightArmy #Register`)
+.setColor('GREEN')
+client.channels.cache.get('795234093025198110').send(embed)
+
 
 genelchat.send(`<@${member.id}>, Aramıza Hoş Geldin ! Umarım Keyifli Vakitler Geçirirsin.`)
 
