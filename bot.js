@@ -131,7 +131,7 @@ client.on("guildMemberAdd", member => {
     moment.locale("tr");
       const lightarmy = new Discord.MessageEmbed()
       .setAuthor(member.guild.name)
-  .setDescription("**<@" + member + "> Aramıza Katıldı. \n\n\`" + member.guild.memberCount + "\` Kişiyiz.\n\Ses Odalarında Teyit Vererek Kayıt Olabilirsin. \n\n<@&795223926459727882> seninle ilgilenicektir. \n\nHesabın Oluşturulma Tarihi: " + moment(member.user.createdAt).format("`YYYY DD MMMM dddd`") +  "\n\n"  + kontrol + "\n\nTagımızı alarak ` ϟ ` bize destek olabilirsin.**\n")
+  .setDescription("**<@" + member + "> Aramıza Katıldı. \n\n\Artık Seninle Birlikte `" + member.guild.memberCount + "\` Kişiyiz.\n\nSes Odalarında Teyit Vererek Kayıt Olabilirsin. \n\n<@&795223926459727882> seninle ilgilenicektir. \n\nHesabın Oluşturulma Tarihi: " + moment(member.user.createdAt).format("`YYYY DD MMMM dddd`") +  "\n\n"  + kontrol + "\n\nTagımızı alarak ` ϟ ` bize destek olabilirsin.**\n")
    .setImage("https://i.pinimg.com/originals/2c/43/ac/2c43acd8c41ee853cf9fbb04960e4fa6.gif")
    kanal.send(lightarmy)   
      kanal.send(register) 
