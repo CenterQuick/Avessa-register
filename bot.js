@@ -126,12 +126,12 @@ client.on("guildMemberAdd", member => {
       const kurulus = new Date().getTime() - user.createdAt.getTime();  
    
     var kontrol;
-  if (kurulus < 1296000000) kontrol = 'Hesap Durumu: Güvenilir Değil :x:'
-  if (kurulus > 1296000000) kontrol = 'Hesap Durumu: Güvenilir Gözüküyor :white_check_mark:'
+  if (kurulus < 1296000000) kontrol = 'Hesap Durumu: Güvenilir Değil <a:Unlem:773500140421644328> '
+  if (kurulus > 1296000000) kontrol = 'Hesap Durumu: Güvenilir Gözüküyor <a:LightArmy_onaytik:795910620175532032>'
     moment.locale("tr");
       const lightarmy = new Discord.MessageEmbed()
       .setAuthor(member.guild.name)
-  .setDescription("**Hoşgeldin! <@" + member + "> Seninle \`" + member.guild.memberCount + "\` Kişiyiz.\n\nMüsait olduğunda Register Odalarından Birine Geçip Kaydını Yaptırabilirsin. \n\n<@&795223926459727882> seninle ilgilenicektir. \n\nHesabın Oluşturulma Tarihi: " + moment(member.user.createdAt).format("`YYYY DD MMMM dddd`") +  "\n\n"  + kontrol + "\n\nTagımızı alarak ` ϟ ` bize destek olabilirsin.**\n")
+  .setDescription("**<@" + member + "> Aramıza Katıldı. \n\n\`" + member.guild.memberCount + "\` Kişiyiz.\n\Ses Odalarında Teyit Vererek Kayıt Olabilirsin. \n\n<@&795223926459727882> seninle ilgilenicektir. \n\nHesabın Oluşturulma Tarihi: " + moment(member.user.createdAt).format("`YYYY DD MMMM dddd`") +  "\n\n"  + kontrol + "\n\nTagımızı alarak ` ϟ ` bize destek olabilirsin.**\n")
    .setImage("https://i.pinimg.com/originals/2c/43/ac/2c43acd8c41ee853cf9fbb04960e4fa6.gif")
    kanal.send(lightarmy)   
      kanal.send(register) 
