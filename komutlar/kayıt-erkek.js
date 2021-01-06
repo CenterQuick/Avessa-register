@@ -3,14 +3,14 @@ const db = require('quick.db')
 
 exports.run = async (client, message, args) => {
   
-if(!["795223926459727882", "795223915512332348", "795223901239771147"].some(role => message.member.roles.cache.get(role)) && (!message.member.hasPermission("ADMINISTRATOR"))) return message.channel.send(`Bu Komutu Kullanabilmek İçin Yetkin Bulunmuyor.`)
+if(!["796056210537054229", "796056220045541437", "796056229797429268"].some(role => message.member.roles.cache.get(role)) && (!message.member.hasPermission("ADMINISTRATOR"))) return message.channel.send(`Bu Komutu Kullanabilmek İçin Yetkin Bulunmuyor.`)
   
-const erkek = message.guild.roles.cache.find(r => r.id === "795223939663265813")
-const xy = message.guild.roles.cache.find(r => r.id === "795223941081202699")
-const cinsiyet = message.guild.roles.cache.find(r => r.id === "795223941311496212")
-const kayıtsız = message.guild.roles.cache.find(r => r.id === "795223941311889409")
-const reglog = message.guild.channels.cache.find(c => c.id === "795233352667234305")
-const genelchat = message.guild.channels.cache.find(g => g.id === "795233352667234305")
+const erkek = message.guild.roles.cache.find(r => r.id === "796056241893277766")
+const xy = message.guild.roles.cache.find(r => r.id === "796056241960255489")
+const cinsiyet = message.guild.roles.cache.find(r => r.id === "796056243281461248")
+const kayıtsız = message.guild.roles.cache.find(r => r.id === "796056243386580992")
+const reglog = message.guild.channels.cache.find(c => c.id === "796355174875660319")
+const genelchat = message.guild.channels.cache.find(g => g.id === "796355174875660319")
 
 const member = message.guild.member(message.mentions.members.first() || message.guild.members.cache.get(args[0]));
 if(!member) return message.channel.send(`Bir Kullanıcı Belirt.`)
@@ -56,7 +56,7 @@ const embed = new Discord.MessageEmbed()
     .addField(`Yetkili Toplam:`, `\`${kayıtlar}\` Kayıtlara Sahip.`)
 .setFooter(`LightArmy #Register`)
 .setColor('GREEN')
-client.channels.cache.get('795234093025198110').send(embed)
+client.channels.cache.get('796347524708696094').send(embed)
 
 genelchat.send(`<@${member.id}>, Aramıza Hoş Geldin ! Umarım Keyifli Vakitler Geçirirsin.`)
 
