@@ -119,19 +119,19 @@ client.login(ayarlar.token);
 //-----------------------HOŞ-GELDİN-MESAJI----------------------\\     
 
 client.on("guildMemberAdd", member => {  
-    const kanal = member.guild.channels.cache.find(r => r.id === "795234093025198110");
-    const register = "<@&795223926459727882>"
+    const kanal = member.guild.channels.cache.find(r => r.id === "796347524708696094");
+    const register = "<@&796056229797429268>"
     let user = client.users.cache.get(member.id);
     require("moment-duration-format");
       const kurulus = new Date().getTime() - user.createdAt.getTime();  
    
     var kontrol;
-  if (kurulus < 1296000000) kontrol = 'Hesap Durumu: Güvenilir Değil <a:Unlem:773500140421644328> '
-  if (kurulus > 1296000000) kontrol = 'Hesap Durumu: Güvenilir Gözüküyor <a:LightArmy_onaytik:795910620175532032>'
+  if (kurulus < 1296000000) kontrol = 'Hesap Durumu: Güvenilir Değil '
+  if (kurulus > 1296000000) kontrol = 'Hesap Durumu: Güvenilir Gözüküyor '
     moment.locale("tr");
       const lightarmy = new Discord.MessageEmbed()
       .setAuthor(member.guild.name)
-  .setDescription("**<@" + member + "> Aramıza Katıldı. \n\n\Artık Seninle Birlikte `" + member.guild.memberCount + "\` Kişiyiz.\n\nSes Odalarında Teyit Vererek Kayıt Olabilirsin. \n\n<@&795223926459727882> seninle ilgilenicektir. \n\nHesabın Oluşturulma Tarihi: " + moment(member.user.createdAt).format("`YYYY DD MMMM dddd`") +  "\n\n"  + kontrol + "\n\nTagımızı alarak ` ϟ ` bize destek olabilirsin.**\n")
+  .setDescription("**<@" + member + "> Aramıza Katıldı. \n\n\Artık Seninle Birlikte `" + member.guild.memberCount + "\` Kişiyiz.\n\nSes Odalarında Teyit Vererek Kayıt Olabilirsin. \n\n<@&796056229797429268> seninle ilgilenicektir. \n\nHesabın Oluşturulma Tarihi: " + moment(member.user.createdAt).format("`YYYY DD MMMM dddd`") +  "\n\n"  + kontrol + "\n\nTagımızı alarak ` ϟ ` bize destek olabilirsin.**\n")
    .setImage("https://i.pinimg.com/originals/2c/43/ac/2c43acd8c41ee853cf9fbb04960e4fa6.gif")
    kanal.send(lightarmy)   
      kanal.send(register) 
@@ -152,8 +152,8 @@ client.on("guildMemberAdd", member => {
      var user = member.user
      x = x.replace("birkaç saniye önce", " ")
      if(!x.includes("önce") || x.includes("sonra") ||x == " ") {
-    const kytsz = member.guild.roles.cache.find(r => r.id === "795223941311889409") 
-     var rol = member.guild.roles.cache.get("795223951386607626") // ŞÜPHELİ HESAP ROLÜNÜN İDSİNİ GİRİN
+    const kytsz = member.guild.roles.cache.find(r => r.id === "796056243386580992") 
+     var rol = member.guild.roles.cache.get("796056251967864872") // ŞÜPHELİ HESAP ROLÜNÜN İDSİNİ GİRİN
      var kayıtsız = member.guild.roles.cache.get(kytsz) // UNREGİSTER ROLÜNÜN İDSİNİ GİRİN
      member.roles.add(rol)
      member.roles.remove(kytsz)
@@ -176,11 +176,11 @@ client.on("guildMemberAdd", member => {
 //-----------------------TAG-ROL----------------------\\     
 
 client.on("userUpdate", async (stg, yeni) => {
-  var sunucu = client.guilds.cache.get('795214694788235284'); // Buraya Sunucu ID
+  var sunucu = client.guilds.cache.get('796039663982084176'); // Buraya Sunucu ID
   var uye = sunucu.members.cache.get(yeni.id);
   var tag = "ϟ"; // Buraya Ekip Tag
-  var tagrol = "795223932546056202"; // Buraya Ekip Rolünün ID
-  var logKanali = "795236151996842004"; // Loglanacağı Kanalın ID
+  var tagrol = "796056235337056257"; // Buraya Ekip Rolünün ID
+  var logKanali = "796361592735793163"; // Loglanacağı Kanalın ID
 
   if (!sunucu.members.cache.has(yeni.id) || yeni.bot || stg.username === yeni.username) return;
   
@@ -204,16 +204,16 @@ client.on("userUpdate", async (stg, yeni) => {
 //----------------------TAG-KONTROL----------------------\\     
 
 client.on("guildMemberAdd", member => {
-  let sunucuid = "795214694788235284"; //Buraya sunucunuzun IDsini yazın
+  let sunucuid = "796039663982084176"; //Buraya sunucunuzun IDsini yazın
   let tag = "ϟ"; //Buraya tagınızı yazın
-  let rol = "795223932546056202"; //Buraya tag alındığı zaman verilecek rolün IDsini yazın
+  let rol = "796056235337056257"; //Buraya tag alındığı zaman verilecek rolün IDsini yazın
 if(member.user.username.includes(tag)){
 member.roles.add(rol)
   const tagalma = new Discord.MessageEmbed()
       .setColor("GREEN")
       .setDescription(`<@${member.id}> adlı kişi sunucumuza taglı şekilde katıldı, o doğuştan beri bizden !`)
       .setTimestamp()
-     client.channels.cache.get('795236151996842004').send(tagalma)
+     client.channels.cache.get('796361592735793163').send(tagalma)
 }
 })
 
