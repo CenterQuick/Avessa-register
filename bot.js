@@ -118,32 +118,43 @@ client.login(ayarlar.token);
 
 //-----------------------HOŞ-GELDİN-MESAJI----------------------\\     
 
-client.on("guildMemberAdd", member => {  
-    const kanal = member.guild.channels.cache.find(r => r.id === "796347524708696094");
-    const register = "<@&796056229797429268>"
+client.on("guildMemberAdd", member => {
+    require("moment-duration-format")
+      var üyesayısı = member.guild.members.cache.size.toString().replace(/ /g, "    ")
+      var üs = üyesayısı.match(/([0-9])/g)
+      üyesayısı = üyesayısı.replace(/([a-zA-Z])/g, "bilinmiyor").toLowerCase()
+      if(üs) {
+        üyesayısı = üyesayısı.replace(/([0-9])/g, d => {
+          return {
+            '0': `<a:0:782596292257120288>`,
+            '1': `<a:1:782596292664492043>`,
+            '2': `<a:2:782596291518660608>`,
+            '3': `<a:3:782595475978584104>`,
+            '4': `<a:4:782595482622492672>`,
+            '5': `<a:5:782595476871839775>`,
+            '6': `<a:6:782595479024173077>`,
+            '7': `<a:7:782595477119565845>`,
+            '8': `<a:8:782595483105099796>`,
+            '9': `<a:9:782595483137867796>`}[d];
+          })
+        }
+    const kanal = member.guild.channels.cache.find(r => r.id === "782520932488183849");
     let user = client.users.cache.get(member.id);
     require("moment-duration-format");
       const kurulus = new Date().getTime() - user.createdAt.getTime();  
    
-const yardım = new Discord.MessageEmbed()
-.setColor('GREEN')
-.setAuthor(`LightArmy #Guard`)
-.setDescription(``)
-
     var kontrol;
-  if (kurulus < 1296000000) kontrol = 'Hesap Durumu: Güvenilir Değil '
-  if (kurulus > 1296000000) kontrol = 'Hesap Durumu: Güvenilir Gözüküyor '
+  if (kurulus < 1296000000) kontrol = '<a:likya:782606502333775883> **Hesap Durumu: Güvenilir Değil.**'
+  if (kurulus > 1296000000) kontrol = '<a:likya:782606499829514250> **Hesap Durumu: Güvenilir Gözüküyor.**'
     moment.locale("tr");
-      const lightarmy = new Discord.MessageEmbed()
-      .setAuthor(member.guild.name)
-  .setDescription("**<@" + member + "> Aramıza Katıldı. \n\n\Artık Seninle Birlikte `" + member.guild.memberCount + "\` Kişiyiz.\n\nSes Odalarında Teyit Vererek Kayıt Olabilirsin. \n\n<@&796056229797429268> seninle ilgilenicektir. \n\nHesabın Oluşturulma Tarihi: " + moment(member.user.createdAt).format("`YYYY DD MMMM dddd`") +  "\n\n"  + kontrol + "\n\nTagımızı alarak ` ϟ ` bize destek olabilirsin.**\n")
-   .setImage("https://i.pinimg.com/originals/2c/43/ac/2c43acd8c41ee853cf9fbb04960e4fa6.gif")
-   .setImage("https://cdn.discordapp.com/attachments/740871896614043669/748878433840398367/Baslksz-1.png")
-.setThumbnail(member.author.avatarURL())
-member.channel.send(yardım)
-     kanal.send(lightarmy)   
-     kanal.send(register) 
-  });
+    const embed = new Discord.MessageEmbed()
+    .setAuthor(member.guild.name, member.guild.iconURL({ dynamic: true }))
+    .setThumbnail(member.user.avatarURL({ dynamic: true }))
+    .setColor('0xEFF3E6')
+    .setDescription("\n<a:likyataci:782663194241662996> <@" + member + ">, Aramıza Katıldı! \n\n<a:likya_:782606498731130891> Senin Birlikte "+üyesayısı+" Kişiyiz. \n\n<a:likya_:782606498659696642> <@&782286438469075045> Birazdan Sizinle İletişime Geçicektir...\n\n<a:likya_:782606503701250078> Hesabınızın Oluşturulma Tarihi: " + moment(member.user.createdAt).format("`YYYY DD MMMM dddd`") +  "\n\n"  + kontrol + "\n\n<a:Likya_:782606498822881290> Müsait olduğunuzda `𝚃𝚑𝚎 𝙻𝚒𝙺𝚈𝙰` Odalarından Birine Geçip Kayıt Olabilirsiniz. \n\n<a:likyasb:782891100464611354> Tagımızı alarak bize destek çıkabilirsin. TAGIMIZ= `𓄎`\n")
+kanal.send("||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||||||||||<@&782286438469075045>")    
+kanal.send(embed)
+});
   
 //-----------------------HOŞ-GELDİN-MESAJI----------------------\\     
 
