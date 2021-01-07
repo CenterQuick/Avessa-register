@@ -125,6 +125,11 @@ client.on("guildMemberAdd", member => {
     require("moment-duration-format");
       const kurulus = new Date().getTime() - user.createdAt.getTime();  
    
+const yardım = new Discord.MessageEmbed()
+.setColor('GREEN')
+.setAuthor(`LightArmy #Guard`)
+.setDescription(``)
+
     var kontrol;
   if (kurulus < 1296000000) kontrol = 'Hesap Durumu: Güvenilir Değil '
   if (kurulus > 1296000000) kontrol = 'Hesap Durumu: Güvenilir Gözüküyor '
@@ -133,7 +138,10 @@ client.on("guildMemberAdd", member => {
       .setAuthor(member.guild.name)
   .setDescription("**<@" + member + "> Aramıza Katıldı. \n\n\Artık Seninle Birlikte `" + member.guild.memberCount + "\` Kişiyiz.\n\nSes Odalarında Teyit Vererek Kayıt Olabilirsin. \n\n<@&796056229797429268> seninle ilgilenicektir. \n\nHesabın Oluşturulma Tarihi: " + moment(member.user.createdAt).format("`YYYY DD MMMM dddd`") +  "\n\n"  + kontrol + "\n\nTagımızı alarak ` ϟ ` bize destek olabilirsin.**\n")
    .setImage("https://i.pinimg.com/originals/2c/43/ac/2c43acd8c41ee853cf9fbb04960e4fa6.gif")
-   kanal.send(lightarmy)   
+   .setImage("https://cdn.discordapp.com/attachments/740871896614043669/748878433840398367/Baslksz-1.png")
+.setThumbnail(member.author.avatarURL())
+member.channel.send(yardım)
+     kanal.send(lightarmy)   
      kanal.send(register) 
   });
   

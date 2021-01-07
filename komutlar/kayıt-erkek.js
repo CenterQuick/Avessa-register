@@ -58,16 +58,14 @@ const embed = new Discord.MessageEmbed()
     .addField(`Yetkili Toplam:`, `\`${kayıtlar}\` Kayıtlara Sahip.`)
     .setImage("https://cdn.discordapp.com/attachments/740871896614043669/748878433840398367/Baslksz-1.png")
     .setThumbnail(message.author.avatarURL())
-   message.channel.send(yardım)
-
 .setFooter(`LightArmy #Register`)
-.setColor('GREEN')
+.setColor('RED')
 client.channels.cache.get('796347524708696094').send(embed)
 
 genelchat.send(`<@${member.id}>, Aramıza Hoş Geldin ! Umarım Keyifli Vakitler Geçirirsin.`)
 
 const yardım = new Discord.MessageEmbed()
-.setColor('GREEN')
+.setColor('RED')
 .setDescription(``)
 
 }
