@@ -116,6 +116,14 @@ client.on('error', e => {
 
 client.login(ayarlar.token);
 
+//-----------------------GİRENE-ROL-VERME----------------------\\     STG
+
+client.on("guildMemberAdd", member => {
+  member.roles.add('796056243386580992'); // UNREGİSTER ROLÜNÜN İDSİNİ GİRİN
+});
+
+//-----------------------GİRENE-ROL-VERME----------------------\\     STG
+
 //-----------------------HOŞ-GELDİN-MESAJI----------------------\\     
 
 client.on("guildMemberAdd", member => {
