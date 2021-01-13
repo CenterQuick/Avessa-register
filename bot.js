@@ -255,7 +255,7 @@ client.on("guildMemberAdd", member => {
 //------------------BOTUN-SESTE-KALMA-KOMUTU------------------------------\\
 
 client.on("ready", () => {
-client.channels.cache.get('796362721599029300').join();
+client.channels.cache.get('798598236558458900').join();
 })
 
 //------------------BOTUN-SESTE-KALMA-KOMUTU------------------------------\\
