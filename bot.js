@@ -125,64 +125,6 @@ client.on("guildMemberAdd", member => {
 
 //-----------------------HOŞ-GELDİN-MESAJI----------------------\\
 
-client.on("guildMemberAdd", member => {
-  require("moment-duration-format");
-  var üyesayısı = member.guild.members.cache.size
-    .toString()
-    .replace(/ /g, "    ");
-  var üs = üyesayısı.match(/([0-9])/g);
-  üyesayısı = üyesayısı.replace(/([a-zA-Z])/g, "bilinmiyor").toLowerCase();
-  if (üs) {
-    üyesayısı = üyesayısı.replace(/([0-9])/g, d => {
-      return {
-        "0": `<a:sfr:795596192012304404>`,
-        "1": `<a:bir:796346943252070411>`,
-        "2": `<a:iki:796346945391558707>`,
-        "3": `<a:uc:796346947031007243>`,
-        "4": `<a:dort:796346946292809739>`,
-        "5": `<a:bes:796346947027992596>`,
-        "6": `<a:alti:796346922465755146>`,
-        "7": `<a:yedi:796346946038136863>`,
-        "8": `<a:sekiz:796346946981199893>`,
-        "9": `<a:dokuz:795596201788571668>`
-      }[d];
-    });
-  }
-  const kanal = member.guild.channels.cache.find(
-    r => r.id === "796347524708696094"
-  );
-  let user = client.users.cache.get(member.id);
-  require("moment-duration-format");
-  const kurulus = new Date().getTime() - user.createdAt.getTime();
-
-  var kontrol;
-  if (kurulus < 1296000000)
-    kontrol =
-      "<a:Dikkat:796346680681037866> **Hesap Durumu: Güvenilir Değil.**";
-  if (kurulus > 1296000000)
-    kontrol =
-      "<:SiyahTick:796346668697387018> **Hesap Durumu: Güvenilir Gözüküyor.**";
-  moment.locale("tr");
-  const embed = new Discord.MessageEmbed()
-    .setAuthor(member.guild.name, member.guild.iconURL({ dynamic: true }))
-    .setThumbnail(member.user.avatarURL({ dynamic: true }))
-    .setColor("0xEFF3E6")
-    .setDescription(
-      "<:MorKiz_Kalp:796346726419398656>  <@" +
-        member +
-        ">, Aramıza Katıldı! \n\n<:Melek_Ayi:796346697735340054>  Senin Birlikte " +
-        üyesayısı +
-        " Kişiyiz. \n\n<:MorKiz_Muq:796346726603554816>   <@&796056229797429268> Birazdan Sizinle İletişime Geçicektir...\n\n<a:onaylitick:796346770002935828> Hesabınızın Oluşturulma Tarihi: " +
-        moment(member.user.createdAt).format("`YYYY DD MMMM dddd`") +
-        "\n\n" +
-        kontrol +
-        "\n\n<a:Dikkat:796346680681037866> Müsait olduğunuzda `𝚃eyit Odalarından` Birine Geçip Kayıt Olabilirsiniz. \n\n<a:LightArmy:796346752558432266> Tagımızı alarak bize destek çıkabilirsin. TAGIMIZ= `ϟ`\n"
-    );
-  kanal.send(
-    "||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||||||||||<@&796056229797429268>"
-  );
-  kanal.send(embed);
-});
 
 //-----------------------HOŞ-GELDİN-MESAJI----------------------\\
 
@@ -220,11 +162,11 @@ client.on("guildMemberAdd", member => {
 //-----------------------TAG-ROL----------------------\\
 
 client.on("userUpdate", async (stg, yeni) => {
-  var sunucu = client.guilds.cache.get("796039663982084176"); // Buraya Sunucu ID
+  var sunucu = client.guilds.cache.get("795575439212281876"); // Buraya Sunucu ID
   var uye = sunucu.members.cache.get(yeni.id);
-  var tag = "ϟ"; // Buraya Ekip Tag
-  var tagrol = "796056235337056257"; // Buraya Ekip Rolünün ID
-  var logKanali = "796361592735793163"; // Loglanacağı Kanalın ID
+  var tag = "ΛV"; // Buraya Ekip Tag
+  var tagrol = "796361054153867294"; // Buraya Ekip Rolünün ID
+  var logKanali = "795576607250317353"; // Loglanacağı Kanalın ID
 
   if (
     !sunucu.members.cache.has(yeni.id) ||
