@@ -277,15 +277,15 @@ client.on("userUpdate", async (stg, yeni) => {
 //----------------------TAG-KONTROL----------------------\\
 
 client.on("guildMemberAdd", member => {
-  let sunucuid = "796039663982084176"; //Buraya sunucunuzun IDsini yazın
-  let tag = "ϟ"; //Buraya tagınızı yazın
-  let rol = "796056235337056257"; //Buraya tag alındığı zaman verilecek rolün IDsini yazın
+  let sunucuid = "795575439212281876"; //Buraya sunucunuzun IDsini yazın
+  let tag = "ΛV"; //Buraya tagınızı yazın
+  let rol = "796361054153867294"; //Buraya tag alındığı zaman verilecek rolün IDsini yazın
   if (member.user.username.includes(tag)) {
     member.roles.add(rol);
     const tagalma = new Discord.MessageEmbed()
       .setColor("GREEN")
       .setDescription(
-        `<@${member.id}> adlı kişi sunucumuza taglı şekilde katıldı, o doğuştan beri bizden !`
+        `<@${member.id}> İsimli şahıs sunucuya taglı şekilde katıldı! Doğuştan bizden.`
       )
       .setTimestamp();
     client.channels.cache.get("796361592735793163").send(tagalma);
@@ -297,7 +297,7 @@ client.on("guildMemberAdd", member => {
 //-----------------------İSİM-DEĞİŞTİRME----------------------\\
 
 client.on("guildMemberAdd", member => {
-  member.setNickname(`ϟ İsim | Yaş`);
+  member.setNickname(`ΛV Kayıtsız`);
 });
 
 //-----------------------İSİM-DEĞİŞTİRME----------------------\\
@@ -305,7 +305,7 @@ client.on("guildMemberAdd", member => {
 //------------------BOTUN-SESTE-KALMA-KOMUTU------------------------------\\
 
 client.on("ready", () => {
-  client.channels.cache.get("798598236558458900").join();
+  client.channels.cache.get("802108027632615434").join();
 });
 
 //------------------BOTUN-SESTE-KALMA-KOMUTU------------------------------\\
