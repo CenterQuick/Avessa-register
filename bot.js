@@ -202,8 +202,8 @@ client.on("guildMemberAdd", member => {
     const kytsz = member.guild.roles.cache.find(
       r => r.id === "796056243386580992"
     );
-    var rol = member.guild.roles.cache.get("796056251967864872"); // ŞÜPHELİ HESAP ROLÜNÜN İDSİNİ GİRİN
-    var kayıtsız = member.guild.roles.cache.get(kytsz); // UNREGİSTER ROLÜNÜN İDSİNİ GİRİN
+    var rol = member.guild.roles.cache.get(""); // ŞÜPHELİ HESAP ROLÜNÜN İDSİNİ GİRİN
+    var kayıtsız = member.guild.roles.cache.get("811247585565343744"); // UNREGİSTER ROLÜNÜN İDSİNİ GİRİN
     member.roles.add(rol);
     member.roles.remove(kytsz);
 

@@ -27,11 +27,11 @@ db.add(`yetkili.${message.author.id}.toplam`, 1)
 let toplami = db.fetch(`yetkili.${message.author.id}.toplam`)  
 
 message.react('✅')
-x.setNickname(`${tag} ${isim} | ${yas}`)
+x.setNickname(`${tag} ${isim} • ${yas}`)
 x.roles.add(erkek)
 x.roles.remove(kayıtsız)
 //
-x.setNickname(`${tag} ${isim} | ${yas}`)
+x.setNickname(`${tag} ${isim} • ${yas}`)
 x.roles.add(erkek)
 x.roles.remove(kayıtsız)
 
