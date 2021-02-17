@@ -229,7 +229,7 @@ client.on("guildMemberAdd", member => {
         `<@${member.id}> İsimli şahıs sunucuya taglı şekilde katıldı! Doğuştan bizden.`
       )
       .setTimestamp();
-    client.channels.cache.get("796361592735793163").send(tagalma);
+    client.channels.cache.get("795576607250317353").send(tagalma);
   }
 });
 
