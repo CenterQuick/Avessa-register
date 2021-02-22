@@ -129,30 +129,12 @@ client.on("guildMemberAdd", member => {
 //------------------------------------------------------------------------------------------------------------------------------------\\
 
 client.on("guildMemberAdd", member => {
-  var moment = require("moment");
-  require("moment-duration-format");
-  moment.locale("tr");
-  var { Permissions } = require("discord.js");
-  var x = moment(member.user.createdAt)
-    .add(7, "days")
-    .fromNow();
-  var user = member.user;
-  x = x.replace("birkaç saniye önce", " ");
-  if (!x.includes("önce") || x.includes("sonra") || x == " ") {
-    const kytsz = member.guild.roles.cache.find(
-      r => r.id === "803679506837143602"
-    );
-    var rol = member.guild.roles.cache.get(""); // ŞÜPHELİ HESAP ROLÜNÜN İDSİNİ GİRİN
-    var kayıtsız = member.guild.roles.cache.get("803679506837143602"); // UNREGİSTER ROLÜNÜN İDSİNİ GİRİN
-    member.roles.add(rol);
-    member.roles.remove(kytsz);
-
-    member.user.send(
-      "Selam Dostum Ne Yazık ki Sana Kötü Bir Haberim Var Hesabın 1 Hafta Gibi Kısa Bir Sürede Açıldığı İçin Fake Hesap Katagorisine Giriyorsun Lütfen Bir Yetkiliyle İletişime Geç Onlar Sana Yardımcı Olucaktır."
-    );
-    setTimeout(() => {}, 1000);
-  } else {
-  }
+const embed = new Discord.RichEmbed()
+      .setTitle("Yeni Üye !")
+      .setAuthor("Sunucumuza hoşgeldin! ")
+      .setColor("RED")
+      .setDescription("Kayıt olmak için @| Registry Hammer ile iletişime geçebilirsin.")
+client.channels.chache.get('803679527526989824').send(embed);
 });
 
 //------------------------------------------------------------------------------------------------------------------------------------\\
