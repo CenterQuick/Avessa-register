@@ -112,7 +112,6 @@ client.on("error", e => {
   console.log(chalk.bgRed(e.replace(regToken, "that was redacted")));
 });
 
-client.login(process.env.token);
 
 //-----------------------GİRENE-ROL-VERME----------------------\\     STG
 
@@ -249,4 +248,5 @@ client.on("ready", () => {
   client.channels.cache.get("813348385007337492").join();
 });
 
-//------------------BOTUN-SESTE-KALMA-KOMUTU------------------------------\\
+
+client.login(process.env.TOKEN);
