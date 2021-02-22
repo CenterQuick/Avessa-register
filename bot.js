@@ -141,10 +141,10 @@ client.on("guildMemberAdd", member => {
   x = x.replace("birkaç saniye önce", " ");
   if (!x.includes("önce") || x.includes("sonra") || x == " ") {
     const kytsz = member.guild.roles.cache.find(
-      r => r.id === "796056243386580992"
+      r => r.id === "803679506837143602"
     );
     var rol = member.guild.roles.cache.get(""); // ŞÜPHELİ HESAP ROLÜNÜN İDSİNİ GİRİN
-    var kayıtsız = member.guild.roles.cache.get("811247585565343744"); // UNREGİSTER ROLÜNÜN İDSİNİ GİRİN
+    var kayıtsız = member.guild.roles.cache.get("803679506837143602"); // UNREGİSTER ROLÜNÜN İDSİNİ GİRİN
     member.roles.add(rol);
     member.roles.remove(kytsz);
 
@@ -161,11 +161,11 @@ client.on("guildMemberAdd", member => {
 //-----------------------TAG-ROL----------------------\\
 
 client.on("userUpdate", async (stg, yeni) => {
-  var sunucu = client.guilds.cache.get("795575439212281876"); // Buraya Sunucu ID
+  var sunucu = client.guilds.cache.get("803666322700369931"); // Buraya Sunucu ID
   var uye = sunucu.members.cache.get(yeni.id);
-  var tag = "ΛV"; // Buraya Ekip Tag
-  var tagrol = "796361054153867294"; // Buraya Ekip Rolünün ID
-  var logKanali = "795576607250317353"; // Loglanacağı Kanalın ID
+  var tag = "ꖜ"; // Buraya Ekip Tag
+  var tagrol = "803679497970909204"; // Buraya Ekip Rolünün ID
+  var logKanali = "803679579633877044"; // Loglanacağı Kanalın ID
 
   if (
     !sunucu.members.cache.has(yeni.id) ||
@@ -218,9 +218,9 @@ client.on("userUpdate", async (stg, yeni) => {
 //----------------------TAG-KONTROL----------------------\\
 
 client.on("guildMemberAdd", member => {
-  let sunucuid = "795575439212281876"; //Buraya sunucunuzun IDsini yazın
-  let tag = "ΛV"; //Buraya tagınızı yazın
-  let rol = "796361054153867294"; //Buraya tag alındığı zaman verilecek rolün IDsini yazın
+  let sunucuid = "803666322700369931"; //Buraya sunucunuzun IDsini yazın
+  let tag = "ꖜ"; //Buraya tagınızı yazın
+  let rol = "803679497970909204"; //Buraya tag alındığı zaman verilecek rolün IDsini yazın
   if (member.user.username.includes(tag)) {
     member.roles.add(rol);
     const tagalma = new Discord.MessageEmbed()
@@ -229,7 +229,7 @@ client.on("guildMemberAdd", member => {
         `<@${member.id}> İsimli şahıs sunucuya taglı şekilde katıldı! Doğuştan bizden.`
       )
       .setTimestamp();
-    client.channels.cache.get("795576607250317353").send(tagalma);
+    client.channels.cache.get("803679579633877044").send(tagalma);
   }
 });
 
@@ -238,7 +238,7 @@ client.on("guildMemberAdd", member => {
 //-----------------------İSİM-DEĞİŞTİRME----------------------\\
 
 client.on("guildMemberAdd", member => {
-  member.setNickname(`ΛV Kayıtsız`);
+  member.setNickname(`ꖜ Kayıtsız`);
 });
 
 //-----------------------İSİM-DEĞİŞTİRME----------------------\\
@@ -246,7 +246,7 @@ client.on("guildMemberAdd", member => {
 //------------------BOTUN-SESTE-KALMA-KOMUTU------------------------------\\
 
 client.on("ready", () => {
-  client.channels.cache.get("802108027632615434").join();
+  client.channels.cache.get("813348385007337492").join();
 });
 
 //------------------BOTUN-SESTE-KALMA-KOMUTU------------------------------\\
