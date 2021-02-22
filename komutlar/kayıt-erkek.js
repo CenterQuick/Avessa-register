@@ -3,19 +3,19 @@ const db = require('quick.db')
 
 exports.run = async (client, message, args) => {
   
-if(!["796053616392667168"].some(role => message.member.roles.cache.get(role)) && (!message.member.hasPermission("ADMINISTRATOR"))) return message.channel.send(`Bu Komutu Kullanabilmek İçin Yetkin Bulunmuyor.`)
+if(!["803679504479420476"].some(role => message.member.roles.cache.get(role)) && (!message.member.hasPermission("ADMINISTRATOR"))) return message.channel.send(`Bu Komutu Kullanabilmek İçin Yetkin Bulunmuyor.`)
   
-const erkek = message.guild.roles.cache.find(r => r.id === "796043619433185301")
-const kayıtsız = message.guild.roles.cache.find(r => r.id === "796042512661479454")
-const reglog = message.guild.channels.cache.find(c => c.id === "796043030901555251")
-const genelchat = message.guild.channels.cache.find(g => g.id === "795575439212281881")
+const erkek = message.guild.roles.cache.find(r => r.id === "803679499488067596")
+const kayıtsız = message.guild.roles.cache.find(r => r.id === "803679506837143602")
+const reglog = message.guild.channels.cache.find(c => c.id === "803679527526989824")
+const genelchat = message.guild.channels.cache.find(g => g.id === "803679538756190229")
 
 const member = message.guild.member(message.mentions.members.first() || message.guild.members.cache.get(args[0]));
 if(!member) return message.channel.send(`Bir Kullanıcı Belirt.`)
 if(!member.roles.highest.position >= message.member.roles.highest.position) return message.channel.send(`Bu Kullanıcı Sizle Üst/Aynı Pozisyondadır.`)
 const x = message.guild.member(member)
 
-let tag = "ΛV"
+let tag = "ꖜ"
 let isim = args[1]
 let yas = Number(args[2])
 if(!isim) return message.channel.send(`Bir İsim Belirt`)
@@ -53,7 +53,7 @@ const embed = new Discord.MessageEmbed()
     .setThumbnail(message.author.avatarURL())
 .setFooter(`Heartling Register`)
 .setColor('RED')
-client.channels.cache.get('795575439212281881').send(embed)
+client.channels.cache.get('803679538756190229').send(embed)
 
 genelchat.send(`<@${member.id}>, Aramıza Hoş Geldin ! İyi eğlenceler`)
 

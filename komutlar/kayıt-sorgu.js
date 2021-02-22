@@ -3,7 +3,7 @@ const db = require("quick.db");
 
 module.exports.run = async (client, message, args) => {
 
-    if(!message.member.roles.cache.some(r => ['796053616392667168'].includes(r.id)) && (!message.member.hasPermission("ADMINISTRATOR")))
+    if(!message.member.roles.cache.some(r => ['803679504479420476'].includes(r.id)) && (!message.member.hasPermission("ADMINISTRATOR")))
     return message.reply("Bu Komutu Kullanmak İçin Yetkiniz Bulunmamakta.")
  
  let kullanıcı = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
