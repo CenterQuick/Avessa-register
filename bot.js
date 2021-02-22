@@ -116,7 +116,7 @@ client.on("error", e => {
 //-----------------------GİRENE-ROL-VERME----------------------\\     STG
 
 client.on("guildMemberAdd", member => {
-  member.roles.add("796056243386580992"); // UNREGİSTER ROLÜNÜN İDSİNİ GİRİN
+  member.roles.add("803679506837143602"); // UNREGİSTER ROLÜNÜN İDSİNİ GİRİN
 });
 
 //-----------------------GİRENE-ROL-VERME----------------------\\     STG
