@@ -219,7 +219,7 @@ client.on("guildMemberAdd", member => {
 //-----------------------İSİM-DEĞİŞTİRME----------------------\\
 
 client.on("guildMemberAdd", member => {
-  member.setNickname(`ꖜ Kayıtsız`);
+  member.setNickname(`Kayıtsız`);
 });
 
 //-----------------------İSİM-DEĞİŞTİRME----------------------\\
