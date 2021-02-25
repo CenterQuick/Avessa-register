@@ -204,13 +204,13 @@ client.on("guildMemberAdd", member => {
   let rol = "803679497970909204"; //Buraya tag alındığı zaman verilecek rolün IDsini yazın
   if (member.user.username.includes(tag)) {
     member.roles.add(rol);
-    const tagalma = new Discord.MessageEmbed()
+    const tagem = new Discord.MessageEmbed()
       .setColor("GREEN")
       .setDescription(
         `<@${member.id}> İsimli şahıs sunucuya taglı şekilde katıldı! Doğuştan bizden.`
       )
       .setTimestamp();
-    client.channels.cache.get("803679579633877044").send(tagalma);
+    client.channels.cache.get("803679579633877044").send(tagem);
   }
 });
 
