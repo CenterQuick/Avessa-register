@@ -119,25 +119,6 @@ client.on("guildMemberAdd", member => {
   member.roles.add("803679506837143602"); // UNREGİSTER ROLÜNÜN İDSİNİ GİRİN
 });
 
-//-----------------------GİRENE-ROL-VERME----------------------\\     STG
-
-//-----------------------HOŞ-GELDİN-MESAJI----------------------\\
-
-
-//-----------------------HOŞ-GELDİN-MESAJI----------------------\\
-
-//------------------------------------------------------------------------------------------------------------------------------------\\
-
-client.on("guildMemberAdd", member => {
-const embed = new Discord.RichEmbed()
-      .setTitle("Yeni Üye !")
-      .setAuthor("Sunucumuza hoşgeldin! ")
-      .setColor("RED")
-      .setDescription("Kayıt olmak için @| Registry Hammer ile iletişime geçebilirsin.")
-client.channels.chache.get('803679527526989824').send(embed);
-});
-
-//------------------------------------------------------------------------------------------------------------------------------------\\
 
 //-----------------------TAG-ROL----------------------\\
 
@@ -219,7 +200,7 @@ client.on("guildMemberAdd", member => {
 //-----------------------İSİM-DEĞİŞTİRME----------------------\\
 
 client.on("guildMemberAdd", member => {
-  member.setNickname(`Kayıtsız`);
+  member.setNickname("Kayıtsız");
 });
 
 //-----------------------İSİM-DEĞİŞTİRME----------------------\\
