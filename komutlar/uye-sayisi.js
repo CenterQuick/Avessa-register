@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = async (client, message, args) => {
-    let tag = "ꖜ"
+    let tag = "ꖜ";
     const voiceChannels = message.guild.channels.filter(c => c.type === 'voice');
     let count = 0;
     for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;
