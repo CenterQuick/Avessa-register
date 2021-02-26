@@ -29,4 +29,4 @@ exports.help = {
     description: 'Say',
     usage:'say'
   
-}
+};
