@@ -1,28 +1,32 @@
 const Discord = require('discord.js');
-module.exports.run = async (bot, message, args) => {
-    let üyesayi = message.guild.memberCount;
-    let botlar = message.guild.members.filter(m => m.user.bot).size;
-    let kullanıcılar = üyesayi - botlar;
-    //let tag = 'ꖜ'
-const embed = new Discord.RichEmbed()
-.setColor(`#CE2D0B`)
-.setTimestamp()
-.addField(`Toplam Üye`, `**${üyesayi}**`, true)
-.addField(`Kullanıcılar`, `**${kullanıcılar}**`, true)
-.addField(`Botlar`, `**${botlar}**`, true)
-//.addField("Tagdaki üye sayısı :", message.guild.members.filter(m => m.user.username.includes(tag)).size)
-.addField(`Üye Durumları`, `**${message.guild.members.filter(o => o.presence.status === 'online').size}** Çevrimiçi\n**${message.guild.members.filter(i => i.presence.status === 'idle').size}** Boşta\n**${message.guild.members.filter(dnd => dnd.presence.status === 'dnd').size}** Rahatsız Etmeyin\n**${message.guild.members.filter(off => off.presence.status === 'offline').size}** Çevrimdışı/Görünmez`, true)
-message.channel.send(embed)
+
+exports.run = async (client, message, args) => {
+    let tag = "ꖜ"
+    const voiceChannels = message.guild.channels.filter(c => c.type === 'voice');
+    let count = 0;
+    for (const [id, voiceChannel] of voiceChannels) count += voiceChannel.members.size;
+
+    const embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .addField("Sunucudaki üye sayısı :", message.guild.memberCount)
+        .addField("Çevrimiçi üye sayısı :", message.guild.members.filter(m => !m.user.bot && m.user.presence.status !== "offline").size)
+        .addField("Seslideki üye sayısı :", count)
+        .addField("Tagdaki üye sayısı :", message.guild.members.filter(m => m.user.username.includes(tag)).size)
+        .setFooter(`${message.author.tag} tarafından istendi, message.author.avatarURL`)
+    message.channel.send(embed);
+
 }
-module.exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ["sayı"],
-  permLevel: 0
+
+exports.conf = {
+    enabled: true,
+    guildOnly: false,
+    aliases: ['sayı'],
+    permLevel: 0
 };
 
-module.exports.help = {
-  name: 'üyedurum',
-  description: 'Üye Durumlarını ve sunucudaki üye sayısını gösterir',
-  usage: 'say'
-};
+exports.help = {
+    name: 'say',
+    description: 'Say',
+    usage:'say'
+  
+}
