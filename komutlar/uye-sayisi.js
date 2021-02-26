@@ -1,28 +1,28 @@
 const Discord = require('discord.js');
-
-exports.run = async (client, message, args) => {
-    if (!message.guild) return message.author.sendMessage('Bu Komutu Sadece Sunucularda Kulanabilirsiniz!');
-
+module.exports.run = async (bot, message, args) => {
+    let üyesayi = message.guild.memberCount;
+    let botlar = message.guild.members.filter(m => m.user.bot).size;
+    let kullanıcılar = üyesayi - botlar;
     let tag = 'ꖜ'
-    const sayem = new Discord.RichEmbed()
-        .setColor("RED")
-    .setTitle(`Sunucu Durumu`)
-        .addField("Sunucudaki üye sayısı :", message.guild.memberCount)
-        .addField("Çevrimiçi üye sayısı :", message.guild.members.filter(m => !m.user.bot && m.user.presence.status !== "offline").size)
-        .addField("Tagdaki üye sayısı :", message.guild.members.filter(m => m.user.username.includes(tag)).size)
-    message.channel.send(sayem);
-
+const embed = new Discord.RichEmbed()
+.setColor(`#CE2D0B`)
+.setTimestamp()
+.addField(`Toplam Üye`, `**${üyesayi}**`, true)
+.addField(`Kullanıcılar`, `**${kullanıcılar}**`, true)
+.addField(`Botlar`, `**${botlar}**`, true)
+.addField("Tagdaki üye sayısı :", message.guild.members.filter(m => m.user.username.includes(tag)).size)
+.addField(`Üye Durumları`, `**${message.guild.members.filter(o => o.presence.status === 'online').size}** Çevrimiçi\n**${message.guild.members.filter(i => i.presence.status === 'idle').size}** Boşta\n**${message.guild.members.filter(dnd => dnd.presence.status === 'dnd').size}** Rahatsız Etmeyin\n**${message.guild.members.filter(off => off.presence.status === 'offline').size}** Çevrimdışı/Görünmez`, true)
+message.channel.send(embed)
 }
-
-exports.conf = {
-    enabled: true,
-    guildOnly: false,
-    aliases: ['sayı'],
-    permLevel: 0
+module.exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ["üyedurum","üyeler","durumlar","durum"],
+  permLevel: 0
 };
 
-exports.help = {
-    name: 'durum',
-    description: 'Say',
-    usage: 'say'
+module.exports.help = {
+  name: 'üyedurum',
+  description: 'Üye Durumlarını ve sunucudaki üye sayısını gösterir',
+  usage: 'say'
 };
