@@ -14,8 +14,7 @@ exports.run = async (client, message, args) => {
         .addField("Tagdaki üye sayısı :", message.guild.members.filter(m => m.user.username.includes(tag)).size)
         .setFooter(`${message.author.tag} tarafından istendi, message.author.avatarURL`)
     message.channel.send(embed);
-
-}
+};
 
 exports.conf = {
     enabled: true,
