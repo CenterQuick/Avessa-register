@@ -15,7 +15,7 @@ if(!member) return message.channel.send(`Bir Kullanıcı Belirt.`)
 if(!member.roles.highest.position >= message.member.roles.highest.position) return message.channel.send(`Bu Kullanıcı Sizle Üst/Aynı Pozisyondadır.`)
 const x = message.guild.member(member)
 
-let tag = "ꖜ"
+let tag = "¹³"
 let isim = args[1]
 let yas = Number(args[2])
 if(!isim) return message.channel.send(`Bir İsim Belirt`)
@@ -27,11 +27,11 @@ db.add(`yetkili.${message.author.id}.toplam`, 1)
 let toplami = db.fetch(`yetkili.${message.author.id}.toplam`)  
 
 message.react('✅')
-x.setNickname(`${tag} ${isim} • ${yas}`)
+x.setNickname(`${isim} ${tag} • ${yas}`)
 x.roles.add(kadin)
 x.roles.remove(kayıtsız)
 //
-x.setNickname(`${tag} ${isim} • ${yas}`)
+x.setNickname(`${isim} ${tag} • ${yas}`)
 x.roles.add(kadin)
 x.roles.remove(kayıtsız)
 
