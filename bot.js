@@ -120,14 +120,14 @@ client.on("guildMemberAdd", member => {
 });
 //-----------------------------------------------------------\\
 
-client.on("message", (message) => {
-  if (message.content.startsWith("tag")) {
+client.on("message", message => {
+  if (message.content === "tag") {
     message.channel.send("ʡ");
   }
 });
 
-client.on("message", (message) => {
-  if (message.content.startsWith("Tag")) {
+client.on("message", message => {
+  if (message.content === "Tag") {
     message.channel.send("ʡ");
   }
 });
