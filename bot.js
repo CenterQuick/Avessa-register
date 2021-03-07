@@ -123,11 +123,11 @@ client.on("guildMemberAdd", member => {
 //-----------------------TAG-ROL----------------------\\
 
 client.on("userUpdate", async (stg, yeni) => {
-  var sunucu = client.guilds.cache.get("803666322700369931"); // Buraya Sunucu ID
+  var sunucu = client.guilds.cache.get("818059988232699904"); // Buraya Sunucu ID
   var uye = sunucu.members.cache.get(yeni.id);
-  var tag = "¹³"; // Buraya Ekip Tag
-  var tagrol = "803679497970909204"; // Buraya Ekip Rolünün ID
-  var logKanali = "803679579633877044"; // Loglanacağı Kanalın ID
+  var tag = "ʡ"; // Buraya Ekip Tag
+  var tagrol = "818073685323677737"; // Buraya Ekip Rolünün ID
+  var logKanali = "818082379695783956"; // Loglanacağı Kanalın ID
 
   if (
     !sunucu.members.cache.has(yeni.id) ||
@@ -180,9 +180,9 @@ client.on("userUpdate", async (stg, yeni) => {
 //----------------------TAG-KONTROL----------------------\\
 
 client.on("guildMemberAdd", member => {
-  let sunucuid = "803666322700369931"; //Buraya sunucunuzun IDsini yazın
-  let tag = "¹³"; //Buraya tagınızı yazın
-  let rol = "803679497970909204"; //Buraya tag alındığı zaman verilecek rolün IDsini yazın
+  let sunucuid = "818059988232699904"; //Buraya sunucunuzun IDsini yazın
+  let tag = "ʡ"; //Buraya tagınızı yazın
+  let rol = "818073685323677737"; //Buraya tag alındığı zaman verilecek rolün IDsini yazın
   if (member.user.username.includes(tag)) {
     member.roles.add(rol);
     const tagem = new Discord.MessageEmbed()
@@ -191,7 +191,7 @@ client.on("guildMemberAdd", member => {
         `<@${member.id}> İsimli şahıs sunucuya taglı şekilde katıldı! Doğuştan bizden.`
       )
       .setTimestamp();
-    client.channels.cache.get("803679579633877044").send(tagem);
+    client.channels.cache.get("818082379695783956").send(tagem);
   }
 });
 
@@ -208,7 +208,7 @@ client.on("guildMemberAdd", member => {
 //------------------BOTUN-SESTE-KALMA-KOMUTU------------------------------\\
 
 client.on("ready", () => {
-  client.channels.cache.get("813348385007337492").join();
+  client.channels.cache.get("818086729197420554").join();
 });
 
 
