@@ -118,7 +118,19 @@ client.on("error", e => {
 client.on("guildMemberAdd", member => {
   member.roles.add("818073869985906708"); // UNREGİSTER ROLÜNÜN İDSİNİ GİRİN
 });
+//-----------------------------------------------------------\\
 
+client.on('message', function(message) {
+ if (message.content === 'tag') {
+  client.message.send('ʡ');
+ }
+});
+
+client.on('message', function(message) {
+ if (message.content === 'Tag') {
+  client.message.send('ʡ');
+ }
+});
 
 //-----------------------TAG-ROL----------------------\\
 
