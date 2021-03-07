@@ -120,16 +120,16 @@ client.on("guildMemberAdd", member => {
 });
 //-----------------------------------------------------------\\
 
-client.on('message', function(message) {
- if (message.content === 'tag') {
-  client.message.send('ʡ');
- }
+client.on("message", (message) => {
+  if (message.content.startsWith("tag")) {
+    message.channel.send("ʡ");
+  }
 });
 
-client.on('message', function(message) {
- if (message.content === 'Tag') {
-  client.message.send('ʡ');
- }
+client.on("message", (message) => {
+  if (message.content.startsWith("Tag")) {
+    message.channel.send("ʡ");
+  }
 });
 
 //-----------------------TAG-ROL----------------------\\
