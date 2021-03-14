@@ -120,6 +120,15 @@ client.on("guildMemberAdd", member => {
 });
 //-----------------------------------------------------------\\
 
+client.on("guildMemberAdd", member => {
+  const embed = new Discord.RichEmbed()
+      .setTitle("Yeni Üye !")
+      .setAuthor("Sunucumuza hoşgeldin! ")
+      .setColor("RED")
+      .setDescription("Kayıt olmak için @| Registry Hammer ile iletişime geçebilirsin.")
+  client.channels.chache.get('799569943921688577').send(embed);
+});
+
 client.on("message", message => {
   if (message.content === "tag") {
     message.channel.send("ʡ");
